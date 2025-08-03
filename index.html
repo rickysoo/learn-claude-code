@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn Claude Code - Master AI Coding Assistant with 27 Essential Tips</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Master Claude Code with 27 essential tips across beginner, intermediate, and advanced levels. Learn core commands, automation, multi-agent workflows, and advanced techniques to boost your AI coding productivity.">
+    <meta name="keywords" content="Claude Code, AI coding assistant, programming automation, developer productivity, machine learning, AI tools, coding tips, software development">
+    <meta name="author" content="Learn Claude Code">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Learn Claude Code - Master AI Coding Assistant with 27 Essential Tips">
+    <meta property="og:description" content="Comprehensive guide to mastering Claude Code with 27 essential tips for beginners, intermediate, and advanced users. Boost your AI coding productivity today.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://learn-claude-code.vercel.app">
+    <meta property="og:image" content="https://learn-claude-code.vercel.app/preview.png">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Learn Claude Code - Master AI Coding Assistant">
+    <meta name="twitter:description" content="Master Claude Code with 27 essential tips across all skill levels. Perfect for developers wanting to boost their AI coding productivity.">
+    <meta name="twitter:image" content="https://learn-claude-code.vercel.app/preview.png">
+    
+    <!-- Additional SEO -->
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="EN">
+    <meta name="revisit-after" content="7 days">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="hero">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    <i class="fas fa-graduation-cap"></i>
+                    Learn Claude Code
+                </h1>
+                <p class="hero-subtitle">Level up your AI coding skills with 27 essential tips!</p>
+                <div class="hero-links">
+                    <a href="https://claude.ai/code" class="hero-link" target="_blank" rel="noopener">
+                        <i class="fas fa-home"></i>
+                        Claude Code Home
+                    </a>
+                    <a href="https://docs.anthropic.com/en/docs/claude-code" class="hero-link" target="_blank" rel="noopener">
+                        <i class="fas fa-book"></i>
+                        Documentation
+                    </a>
+                    <a href="https://github.com/anthropics/claude-code" class="hero-link" target="_blank" rel="noopener">
+                        <i class="fab fa-github"></i>
+                        GitHub
+                    </a>
+                </div>
+            </div>
+        </header>
+
+        <div class="theme-toggle" onclick="toggleTheme()">
+            <i class="fas fa-sun" id="themeIcon"></i>
+        </div>
+
+        <nav class="tab-container">
+            <div class="tabs">
+                <button class="tab active" data-level="beginner">
+                    <i class="fas fa-seedling"></i>
+                    <span>Beginner</span>
+                </button>
+                <button class="tab" data-level="intermediate">
+                    <i class="fas fa-rocket"></i>
+                    <span>Intermediate</span>
+                </button>
+                <button class="tab" data-level="advanced">
+                    <i class="fas fa-crown"></i>
+                    <span>Advanced</span>
+                </button>
+            </div>
+        </nav>
+
+        <main class="content">
+            <div class="level-intro active" id="beginnerIntro">
+                <h2><i class="fas fa-seedling"></i> Beginner Level</h2>
+                <p>🌱 Start your Claude Code journey! Master the fundamentals and build confidence with core commands and basic setup.</p>
+                <div class="level-stats">
+                    <div class="stat">
+                        <i class="fas fa-play"></i>
+                        <span>Core Commands</span>
+                    </div>
+                    <div class="stat">
+                        <i class="fas fa-cog"></i>
+                        <span>Basic Setup</span>
+                    </div>
+                    <div class="stat">
+                        <i class="fas fa-zap"></i>
+                        <span>Immediate Productivity</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="level-intro" id="intermediateIntro">
+                <h2><i class="fas fa-rocket"></i> Intermediate Level</h2>
+                <p>🚀 Accelerate your workflow! Learn efficiency tricks, advanced control, and quality optimization techniques.</p>
+                <div class="level-stats">
+                    <div class="stat">
+                        <i class="fas fa-tachometer-alt"></i>
+                        <span>Efficiency</span>
+                    </div>
+                    <div class="stat">
+                        <i class="fas fa-sliders-h"></i>
+                        <span>Advanced Control</span>
+                    </div>
+                    <div class="stat">
+                        <i class="fas fa-gem"></i>
+                        <span>Output Quality</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="level-intro" id="advancedIntro">
+                <h2><i class="fas fa-crown"></i> Advanced Level</h2>
+                <p>👑 Become a Claude Code master! Orchestrate multi-agent systems and automate complex workflows.</p>
+                <div class="level-stats">
+                    <div class="stat">
+                        <i class="fas fa-network-wired"></i>
+                        <span>Multi-Agent Systems</span>
+                    </div>
+                    <div class="stat">
+                        <i class="fas fa-robot"></i>
+                        <span>Deep Automation</span>
+                    </div>
+                    <div class="stat">
+                        <i class="fas fa-project-diagram"></i>
+                        <span>Complex Workflows</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tips-grid" id="beginnerTips">
+                <!-- Beginner tips will be populated by JavaScript -->
+            </div>
+
+            <div class="tips-grid hidden" id="intermediateTips">
+                <!-- Intermediate tips will be populated by JavaScript -->
+            </div>
+
+            <div class="tips-grid hidden" id="advancedTips">
+                <!-- Advanced tips will be populated by JavaScript -->
+            </div>
+        </main>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
