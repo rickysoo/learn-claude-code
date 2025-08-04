@@ -12,7 +12,8 @@
       "Bash(vercel:*)",
       "Bash(ls:*)",
       "WebFetch(domain:docs.anthropic.com)",
-      "Bash(grep:*)"
+      "Bash(grep:*)",
+      "Bash(node:*)"
     ],
     "deny": []
   }

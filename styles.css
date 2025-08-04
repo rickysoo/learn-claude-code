@@ -232,8 +232,15 @@ body {
 /* Chrome-style Tabs */
 .tab-container {
     position: relative;
-    background: var(--bg-secondary);
-    border-bottom: 1px solid var(--border-color);
+    background: #d7d8da;
+    border-bottom: 1px solid #bdc1c6;
+    overflow: visible;
+    padding-top: 8px;
+}
+
+[data-theme="dark"] .tab-container {
+    background: #2d2d30;
+    border-bottom: 1px solid #464649;
 }
 
 .tabs {
@@ -242,39 +249,60 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
+    position: relative;
 }
 
 .tab {
     flex: 1;
     max-width: 300px;
-    background: var(--border-color);
+    background: #e8eaed;
     border: none;
-    padding: 1rem 2rem;
+    padding: 12px 24px;
     cursor: pointer;
     font-size: 1rem;
     font-weight: 600;
-    color: var(--text-secondary);
+    color: #5f6368;
     position: relative;
-    margin-right: 2px;
-    border-radius: 12px 12px 0 0;
-    transition: all 0.3s ease;
+    transition: all 0.2s ease;
     display: flex;
     align-items: center;
-    gap: 0.75rem;
     justify-content: center;
-    min-height: 60px;
+    gap: 0.5rem;
+    clip-path: polygon(12px 0%, calc(100% - 12px) 0%, calc(100% - 8px) 100%, 8px 100%);
+    margin: 0 -1px;
+    border-top: 3px solid transparent;
+    min-height: 48px;
 }
 
 .tab:hover {
-    background: var(--bg-card);
-    transform: translateY(-2px);
+    background: #f1f3f4;
+    color: #3c4043;
 }
 
 .tab.active {
-    background: var(--bg-primary);
-    color: var(--text-primary);
-    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
-    transform: translateY(-3px);
+    background: #ffffff;
+    color: #202124;
+    border-top: 3px solid #1a73e8;
+    z-index: 10;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+/* Dark theme tab styling */
+[data-theme="dark"] .tab {
+    background: #3c4043;
+    color: #e8eaed;
+}
+
+[data-theme="dark"] .tab:hover {
+    background: #5f6368;
+    color: #f8f9fa;
+}
+
+[data-theme="dark"] .tab.active {
+    background: #202124;
+    color: #e8eaed;
+    border-top: 3px solid #8ab4f8;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.3), 0 1px 2px rgba(0,0,0,0.4);
 }
 
 .tab i {
@@ -467,6 +495,17 @@ body {
     animation: slideDown 0.3s ease;
 }
 
+.tip-external-link {
+    display: none;
+    padding-top: 1rem;
+    text-align: center;
+}
+
+.tip-external-link.expanded {
+    display: block;
+    animation: slideDown 0.3s ease;
+}
+
 @keyframes slideDown {
     from {
         opacity: 0;
@@ -581,30 +620,33 @@ body {
 
 /* Documentation Links */
 .doc-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    margin-top: 1rem;
-    padding: 0.75rem 1rem;
-    background: var(--primary-color);
-    color: white;
-    text-decoration: none;
-    border-radius: 8px;
-    font-weight: 600;
-    font-size: 0.9rem;
-    transition: all 0.3s ease;
-    box-shadow: var(--shadow-light);
+    display: inline-block;
+    color: var(--primary-color);
+    text-decoration: underline;
+    text-decoration-color: var(--primary-color);
+    text-underline-offset: 2px;
+    font-weight: 500;
+    font-size: inherit;
+    transition: all 0.2s ease;
     position: relative;
+    margin-top: 1rem;
+    line-height: 1.5;
 }
 
 .doc-link:hover {
-    background: var(--claude-orange-dark);
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-medium);
+    color: var(--claude-orange-dark);
+    text-decoration-color: var(--claude-orange-dark);
+    text-decoration-thickness: 2px;
+}
+
+[data-theme="dark"] .doc-link:hover {
+    color: var(--claude-orange-light);
+    text-decoration-color: var(--claude-orange-light);
 }
 
 .doc-link i.fa-book {
-    font-size: 0.8rem;
+    font-size: 0.9em;
+    margin-right: 0.3em;
 }
 
 /* External link indicator */
@@ -612,14 +654,16 @@ body {
     content: '\f35d'; /* FontAwesome external-link-alt icon */
     font-family: 'Font Awesome 5 Free';
     font-weight: 900;
-    font-size: 0.7rem;
-    margin-left: 0.3rem;
-    opacity: 0.8;
-    transition: opacity 0.3s ease;
+    font-size: 0.75em;
+    margin-left: 0.25em;
+    opacity: 0.7;
+    transition: all 0.2s ease;
+    vertical-align: text-top;
 }
 
 .doc-link:hover::after {
     opacity: 1;
+    transform: translateY(-1px);
 }
 
 /* Footer */

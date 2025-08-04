@@ -740,6 +740,11 @@ function populateAllTips() {
 }
 
 function createTipCard(tip, number, level) {
+    // Extract the external link from the content
+    const linkMatch = tip.content.match(/<a href[^>]*>.*?<\/a>/);
+    const externalLink = linkMatch ? linkMatch[0] : '';
+    const contentWithoutLink = tip.content.replace(/<a href[^>]*>.*?<\/a>/, '').trim();
+
     return `
         <div class="tip-card" data-tip-id="${tip.id}">
             <div class="tip-header">
@@ -753,12 +758,15 @@ function createTipCard(tip, number, level) {
                 </div>
             </div>
             <div class="tip-content" id="content-${tip.id}">
-                ${tip.content}
+                ${contentWithoutLink}
             </div>
             <div class="tip-actions">
                 <button class="expand-btn" onclick="toggleTipContent('${tip.id}')">
                     <span id="btn-text-${tip.id}">Learn More</span>
                 </button>
+            </div>
+            <div class="tip-external-link" id="link-${tip.id}">
+                ${externalLink}
             </div>
         </div>
     `;
@@ -775,6 +783,7 @@ function setupTipListeners(tipId) {
 
 function toggleTipContent(tipId) {
     const content = document.getElementById(`content-${tipId}`);
+    const externalLink = document.getElementById(`link-${tipId}`);
     const btnText = document.getElementById(`btn-text-${tipId}`);
     
     // Initialize audio on first user interaction
@@ -792,10 +801,12 @@ function toggleTipContent(tipId) {
     
     if (content.classList.contains('expanded')) {
         content.classList.remove('expanded');
+        externalLink.classList.remove('expanded');
         btnText.textContent = 'Learn More';
         playCollapseSound(level); // Level-specific descending notes
     } else {
         content.classList.add('expanded');
+        externalLink.classList.add('expanded');
         btnText.textContent = 'Show Less';
         playExpandSound(level); // Level-specific ascending chord
     }
