@@ -9,7 +9,9 @@
       "Bash(git remote add:*)",
       "Bash(git branch:*)",
       "Bash(git push:*)",
-      "Bash(vercel:*)"
+      "Bash(vercel:*)",
+      "Bash(ls:*)",
+      "WebFetch(domain:docs.anthropic.com)"
     ],
     "deny": []
   }

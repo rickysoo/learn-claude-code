@@ -1,587 +1,649 @@
-// Claude Code Tips Data
+// Claude Code Tips Data - 36 Beginner-Friendly Tips!
 const tipsData = {
     beginner: [
         {
             id: 'b1',
-            title: 'Install and Launch Claude Code in Your Project Folder',
-            icon: 'fas fa-download',
-            summary: 'Get started by installing globally and launching from your project directory for proper context.',
+            title: 'Setting Up Your New Coding Friend',
+            icon: 'fas fa-heart',
+            summary: 'Getting Claude Code is super easy! It\'s like downloading any app, but this one will change how you code forever.',
             content: `
-                <p><strong>🚀 Getting Started Right!</strong></p>
-                <p>First things first - install Claude Code globally to access it from anywhere:</p>
-                <code>npm install -g @anthropic/claude-code</code>
-                <p>Then <strong>always navigate to your project folder</strong> before launching Claude Code. This gives Claude the proper context of your codebase structure, dependencies, and project files.</p>
-                <p><strong>💡 Pro Tip:</strong> Claude understands your project much better when launched from the root directory!</p>
+                <p><strong>🚀 Welcome to Your Coding Adventure!</strong></p>
+                <p>Installing Claude Code is as easy as downloading your favorite app:</p>
+                <code>npm install -g @anthropic-ai/claude-code<br>claude-code auth</code>
+                <p>After you install it, you'll need to connect it to your account - think of it like logging into your favorite social media app!</p>
+                <p><strong>💡 Pro Tip:</strong> This is going to be your new best coding buddy!</p>
+                <a href="https://docs.anthropic.com/en/docs/claude-code/quickstart" target="_blank" rel="noopener" class="doc-link">
+                    <i class="fas fa-book"></i> Learn more about getting started
+                </a>
             `
         },
         {
             id: 'b2',
-            title: 'Integrate with Your IDE',
-            icon: 'fas fa-code',
-            summary: 'Connect with VS Code, Cursor, or Windsurf for seamless two-way communication.',
+            title: 'Talking to Files Like They\'re Your Friends',
+            icon: 'fas fa-comments',
+            summary: 'Forget complicated commands! Just tell Claude Code what you want in plain English.',
             content: `
-                <p><strong>🔗 Supercharge Your Workflow!</strong></p>
-                <p>Use the <code>/ide</code> command to connect Claude Code with your favorite IDE:</p>
-                <ul>
-                    <li><strong>VS Code</strong> - Full integration support</li>
-                    <li><strong>Cursor</strong> - AI-first development</li>
-                    <li><strong>Windsurf</strong> - Advanced coding assistant</li>
-                </ul>
-                <p>Once connected, Claude knows which file you're viewing and can see your selections, making conversations much more contextual and productive!</p>
-                <p><strong>🎯 Result:</strong> No more copy-pasting code back and forth!</p>
+                <p><strong>🗣️ Speak Human, Not Computer!</strong></p>
+                <p>Want to read a file? Just ask! Need to create something new? Say it like you're talking to a friend:</p>
+                <div class="content-box-code">
+                    claude-code "hey, can you read my main.py file and tell me what it does?"<br>
+                    claude-code "please create a README file for my awesome project"
+                </div>
+                <p>No complicated syntax to remember - just friendly conversation!</p>
+                <a href="https://docs.anthropic.com/en/docs/claude-code/common-workflows" target="_blank" rel="noopener" class="doc-link">
+                    <i class="fas fa-book"></i> Working with Files Made Easy
+                </a>
             `
         },
         {
             id: 'b3',
-            title: 'Use `/init` to Generate Project Memory',
-            icon: 'fas fa-brain',
-            summary: 'Automatically create a claude.md file that serves as Claude\'s memory of your project.',
+            title: 'Two Ways to Chat: Quick Questions vs Deep Conversations',
+            icon: 'fas fa-phone-alt',
+            summary: 'Sometimes you need a quick answer, other times you want a longer conversation about your code.',
             content: `
-                <p><strong>🧠 Give Claude Perfect Memory!</strong></p>
-                <p>Run <code>/init</code> in any new project to automatically scan your codebase and create a comprehensive <code>claude.md</code> file.</p>
-                <p><strong>What it captures:</strong></p>
-                <ul>
-                    <li>Project structure and technologies</li>
-                    <li>Coding standards and conventions</li>
-                    <li>Dependencies and frameworks</li>
-                    <li>Key architectural patterns</li>
-                </ul>
-                <p>This memory file is loaded into every conversation, so Claude always understands your project context without you having to explain it repeatedly!</p>
+                <p><strong>📞 Choose Your Chat Style!</strong></p>
+                <p>Claude Code gets both! Use quick mode for "fix this now" moments, and conversation mode when you want to explore and learn:</p>
+                <div class="content-box-code">
+                    # Start a conversation (great for learning!)<br>
+                    claude-code<br><br>
+                    # Ask one quick thing<br>
+                    claude-code "fix this annoying error in my app.js file"
+                </div>
+                <p><strong>🎯 Perfect for:</strong> Learning at your own pace!</p>
+                <a href="https://docs.anthropic.com/en/docs/claude-code/interactive-mode" target="_blank" rel="noopener" class="doc-link">
+                    <i class="fas fa-book"></i> Different Ways to Chat
+                </a>
             `
         },
         {
             id: 'b4',
-            title: 'Clear Chat History with `/clear`',
-            icon: 'fas fa-broom',
-            summary: 'Start fresh conversations and optimize token usage by clearing chat history.',
+            title: 'Claude Code Gets Your Project (Even When You Don\'t!)',
+            icon: 'fas fa-brain',
+            summary: 'Claude Code automatically understands what kind of project you\'re working on.',
             content: `
-                <p><strong>🧹 Keep It Clean and Efficient!</strong></p>
-                <p>Use <code>/clear</code> whenever you:</p>
-                <ul>
-                    <li>Complete a task and start something new</li>
-                    <li>Want to reduce token costs</li>
-                    <li>Need Claude to focus on fresh context</li>
-                </ul>
-                <p><strong>Why it matters:</strong> Long chat histories consume more tokens and can make Claude less focused. Starting fresh keeps conversations efficient and cost-effective!</p>
-                <p><strong>💰 Bonus:</strong> Your token usage will thank you for this habit!</p>
+                <p><strong>🤖 Your Smart Project Assistant!</strong></p>
+                <p>Here's something cool - Claude Code automatically understands what kind of project you're working on. It's like having a friend who instantly knows if you're building a website, mobile app, or something else entirely!</p>
+                <div class="content-box-light">
+                    <strong>💡 Pro tip:</strong> Create a file called <code>CLAUDE.md</code> in your project folder and write any special instructions there. It's like leaving notes for your future self!
+                </div>
+                <a href="https://docs.anthropic.com/en/docs/claude-code/memory" target="_blank" rel="noopener" class="doc-link">
+                    <i class="fas fa-book"></i> How Claude Remembers Your Project
+                </a>
             `
         },
         {
             id: 'b5',
-            title: 'Master Auto-Accept and Plan Mode',
+            title: 'Creating Code That Actually Works',
             icon: 'fas fa-magic',
-            summary: 'Use Shift+Tab to cycle through interaction modes for different workflows.',
+            summary: 'Don\'t know how to write a function? No problem! Just describe what you want it to do.',
             content: `
-                <p><strong>⚡ Transform Your Workflow!</strong></p>
-                <p>Press <code>Shift+Tab</code> to cycle through powerful modes:</p>
-                <div class="content-box-light">
-                    <strong>🔄 Auto-Accept Mode:</strong> Claude automatically applies approved edits - perfect for trusted, iterative work!
+                <p><strong>✨ Code Magic Made Simple!</strong></p>
+                <p>Claude Code speaks both human and computer language fluently. Just describe what you want:</p>
+                <div class="content-box-code">
+                    claude-code "write me a Python function that finds fibonacci numbers"<br>
+                    claude-code "create a cool loading spinner for my React app"
                 </div>
-                <div class="content-box-medium">
-                    <strong>📋 Plan Mode:</strong> Claude thinks and researches without making changes, giving you a detailed strategy first!
-                </div>
-                <p>Choose the right mode for your current task and watch your productivity soar!</p>
+                <p><strong>🎉 Result:</strong> Working code that you can actually understand!</p>
+                <a href="https://docs.anthropic.com/en/docs/claude-code/common-workflows" target="_blank" rel="noopener" class="doc-link">
+                    <i class="fas fa-book"></i> Getting Code Written for You
+                </a>
             `
         },
         {
             id: 'b6',
-            title: 'Navigate Conversation History Efficiently',
-            icon: 'fas fa-history',
-            summary: 'Use arrow keys and Escape to navigate and fork conversations from any point.',
+            title: 'When Things Go Wrong (And They Will!)',
+            icon: 'fas fa-life-ring',
+            summary: 'Error messages can be scary, but they\'re just your computer\'s way of saying "I\'m confused."',
             content: `
-                <p><strong>🕰️ Time Travel Through Your Conversations!</strong></p>
-                <p><strong>Quick Navigation:</strong></p>
-                <ul>
-                    <li><strong>Up Arrow:</strong> Scroll through previous messages across sessions</li>
-                    <li><strong>Escape + Escape:</strong> View all past messages in a searchable list</li>
-                </ul>
-                <p><strong>🌿 Fork Conversations:</strong> Click on any previous message to "fork" your conversation from that exact point - perfect for exploring different approaches!</p>
-                <p>Never lose track of great ideas or need to repeat context again!</p>
+                <p><strong>🩹 Error Messages Aren't So Scary!</strong></p>
+                <p>Claude Code is like a translator that turns scary error messages into helpful advice:</p>
+                <div class="content-box-code">
+                    claude-code "help! I'm getting this 'module not found' error in my app"<br>
+                    claude-code "my Python code says TypeError - what does that mean?"
+                </div>
+                <p><strong>🌟 Remember:</strong> Every error is just a puzzle waiting to be solved!</p>
+                <a href="https://docs.anthropic.com/en/docs/claude-code/troubleshooting" target="_blank" rel="noopener" class="doc-link">
+                    <i class="fas fa-book"></i> Fixing Things When They Break
+                </a>
             `
         },
         {
             id: 'b7',
-            title: 'Target Specific Files with @ Mentions',
-            icon: 'fas fa-at',
-            summary: 'Focus Claude\'s attention on specific files or directories using the @ symbol.',
+            title: 'Understanding Code That Looks Like Magic',
+            icon: 'fas fa-spell-check',
+            summary: 'Ever look at code and think "what the heck does this do?" Claude Code is your personal code interpreter.',
             content: `
-                <p><strong>🎯 Laser-Focused Assistance!</strong></p>
-                <p>Use <code>@filename</code> or <code>@folder/</code> to include specific files in your prompt:</p>
+                <p><strong>🔮 Decode the Magic!</strong></p>
+                <p>Claude Code can explain anything in simple terms:</p>
                 <div class="content-box-code">
-                    "Fix the login bug in @auth/login.js"<br>
-                    "Update styles in @components/Button.css"<br>
-                    "Analyze all files in @utils/"
+                    claude-code "explain this async/await thing like I'm 5 years old"<br>
+                    claude-code "what is this weird regex pattern trying to match?"
                 </div>
-                <p><strong>✨ Benefits:</strong></p>
-                <ul>
-                    <li>Claude loads the exact file content</li>
-                    <li>More accurate and contextual responses</li>
-                    <li>No need to copy-paste code snippets</li>
-                </ul>
+                <p><strong>💫 Perfect for:</strong> Learning from code you find online or understanding legacy code!</p>
+                <a href="https://docs.anthropic.com/en/docs/claude-code/common-workflows" target="_blank" rel="noopener" class="doc-link">
+                    <i class="fas fa-book"></i> Making Sense of Code
+                </a>
             `
         },
         {
             id: 'b8',
-            title: 'Quickly Add Memory with #',
-            icon: 'fas fa-hashtag',
-            summary: 'Instantly add new rules or context to your claude.md file using the pound symbol.',
+            title: 'Making Your Code Look Pretty and Work Better',
+            icon: 'fas fa-palette',
+            summary: 'Good code isn\'t just code that works - it\'s code that other people can understand.',
             content: `
-                <p><strong>🧠 Instant Memory Updates!</strong></p>
-                <p>Add new instructions to your project memory on the fly:</p>
+                <p><strong>🎨 Beautiful Code is Happy Code!</strong></p>
+                <p>Claude Code can help make your code cleaner and easier to read:</p>
                 <div class="content-box-code">
-                    "# Always use TypeScript for new components"<br>
-                    "# Follow React hooks best practices"<br>
-                    "# Use Tailwind CSS for styling"
+                    claude-code "this code is messy, can you help me clean it up?"<br>
+                    claude-code "change all these confusing variable names to something better"
                 </div>
-                <p>Claude automatically integrates these instructions into the appropriate section of your <code>claude.md</code> file!</p>
-                <p><strong>🚀 Perfect for:</strong> Establishing coding standards, naming conventions, and project-specific preferences.</p>
+                <p><strong>🌟 Why it matters:</strong> Future you will thank present you for this!</p>
+                <a href="https://docs.anthropic.com/en/docs/claude-code/common-workflows" target="_blank" rel="noopener" class="doc-link">
+                    <i class="fas fa-book"></i> Writing Beautiful Code
+                </a>
             `
         },
         {
             id: 'b9',
-            title: 'Stop Operations with Escape',
-            icon: 'fas fa-stop-circle',
-            summary: 'Interrupt Claude\'s current operation without exiting the application.',
+            title: 'Creating Documentation (So You Remember What You Built!)',
+            icon: 'fas fa-sticky-note',
+            summary: 'Documentation is like writing a manual for your code. Claude Code makes it painless.',
             content: `
-                <p><strong>⏸️ Stay in Control!</strong></p>
-                <p>When Claude goes off-track or you need to pause:</p>
-                <div class="content-box-warning">
-                    <strong>Press ESC</strong> - Stops current operation safely
+                <p><strong>📚 Document Like a Pro!</strong></p>
+                <p>Future you will thank present you for this! Claude Code makes documentation painless:</p>
+                <div class="content-box-code">
+                    claude-code "add comments to explain what each function does"<br>
+                    claude-code "create documentation for my API so others can use it"
                 </div>
-                <div class="content-box-success">
-                    <strong>NOT Ctrl+C</strong> - This exits the entire application!
+                <p><strong>💡 Remember:</strong> Good documentation is a gift to your future self!</p>
+                <a href="https://docs.anthropic.com/en/docs/claude-code/common-workflows" target="_blank" rel="noopener" class="doc-link">
+                    <i class="fas fa-book"></i> Documenting Your Amazing Work
+                </a>
+            `
+        },
+        {
+            id: 'b10',
+            title: 'Git: Your Code\'s Time Machine',
+            icon: 'fas fa-history',
+            summary: 'Git tracks all your code changes like a super detailed diary.',
+            content: `
+                <p><strong>⏰ Travel Through Code Time!</strong></p>
+                <p>Claude Code makes Git less scary by handling the complicated parts for you:</p>
+                <div class="content-box-code">
+                    claude-code "save my changes with a good commit message"<br>
+                    claude-code "what changes did I make since yesterday?"
                 </div>
-                <p>This lets you redirect Claude, provide clarifications, or prevent unwanted changes while keeping your session active.</p>
-                <p><strong>💡 Pro Tip:</strong> Use this when you want to give additional context mid-task!</p>
+                <p><strong>🎯 Perfect for:</strong> Keeping track of all your awesome progress!</p>
+                <a href="https://docs.anthropic.com/en/docs/claude-code/github-actions" target="_blank" rel="noopener" class="doc-link">
+                    <i class="fas fa-book"></i> Mastering Code History
+                </a>
+            `
+        },
+        {
+            id: 'b11',
+            title: 'Setting Up Your Coding Environment (Your Digital Workshop)',
+            icon: 'fas fa-tools',
+            summary: 'Every craftsperson needs the right tools. Claude Code helps you set up everything perfectly.',
+            content: `
+                <p><strong>🔧 Build Your Perfect Workshop!</strong></p>
+                <p>Claude Code helps you set up your coding environment so everything works smoothly together:</p>
+                <div class="content-box-code">
+                    claude-code "help me set up everything I need for React development"<br>
+                    claude-code "configure ESLint so my JavaScript looks professional"
+                </div>
+                <p><strong>✨ Result:</strong> A development environment that makes you feel like a pro!</p>
+                <a href="https://docs.anthropic.com/en/docs/claude-code/ide-integrations" target="_blank" rel="noopener" class="doc-link">
+                    <i class="fas fa-book"></i> Building Your Perfect Setup
+                </a>
+            `
+        },
+        {
+            id: 'b12',
+            title: 'Decoding Error Messages (They\'re Not as Scary as They Look!)',
+            icon: 'fas fa-puzzle-piece',
+            summary: 'Error messages are like puzzles - once you know how to read them, they actually help you.',
+            content: `
+                <p><strong>🧩 Puzzle-Solving Time!</strong></p>
+                <p>Error messages are like puzzles - once you know how to read them, they actually help you fix things faster:</p>
+                <div class="content-box-code">
+                    claude-code "explain this error: ReferenceError: Cannot access 'user' before initialization"
+                </div>
+                <p><strong>🌟 Remember:</strong> Every error message is just trying to help you!</p>
+                <a href="https://docs.anthropic.com/en/docs/claude-code/troubleshooting" target="_blank" rel="noopener" class="doc-link">
+                    <i class="fas fa-book"></i> Understanding What Went Wrong
+                </a>
             `
         }
     ],
     intermediate: [
         {
             id: 'i1',
-            title: 'Strategically Select Models with `/model`',
-            icon: 'fas fa-brain',
-            summary: 'Choose between powerful and affordable models based on task complexity.',
+            title: 'Becoming a Code Detective',
+            icon: 'fas fa-search',
+            summary: 'Now you\'re ready to look at bigger projects and understand how all the pieces fit together.',
             content: `
-                <p><strong>🧠 Smart Model Selection!</strong></p>
-                <p>Use <code>/model</code> to switch between models strategically:</p>
-                <div class="content-box-light">
-                    <strong>🚀 Opus 4:</strong> Complex reasoning, architecture planning, debugging
+                <p><strong>🕵️ Detective Mode Activated!</strong></p>
+                <p>Claude Code can analyze your entire codebase and find ways to make it even better:</p>
+                <div class="content-box-code">
+                    claude-code "look at my whole project and tell me what could be faster"<br>
+                    claude-code "are there any packages I'm not using anymore?"
                 </div>
-                <div class="content-box-medium">
-                    <strong>⚡ Sonnet 4:</strong> Code refactoring, documentation, routine tasks
-                </div>
-                <p><strong>💰 Cost Optimization Strategy:</strong></p>
-                <ul>
-                    <li>Start with Sonnet for exploration</li>
-                    <li>Switch to Opus for complex problems</li>
-                    <li>Return to Sonnet for implementation</li>
-                </ul>
+                <p><strong>🎯 Perfect for:</strong> Understanding big projects and finding hidden opportunities!</p>
+                <a href="https://docs.anthropic.com/en/docs/claude-code/common-workflows" target="_blank" rel="noopener" class="doc-link">
+                    <i class="fas fa-book"></i> Analyzing Your Entire Project
+                </a>
             `
         },
         {
             id: 'i2',
-            title: 'Summarize Context with `/compact`',
-            icon: 'fas fa-compress-alt',
-            summary: 'Preserve important context while reducing token count for long conversations.',
+            title: 'Restructuring Code Like a Pro',
+            icon: 'fas fa-home',
+            summary: 'Sometimes you need to reorganize your code without breaking anything.',
             content: `
-                <p><strong>📦 Smart Context Management!</strong></p>
-                <p>When your conversation gets long but you can't start fresh, use <code>/compact</code>:</p>
-                <ul>
-                    <li>🔄 Summarizes entire conversation history</li>
-                    <li>💾 Preserves all important context and decisions</li>
-                    <li>🚀 Starts a new chat with compressed context</li>
-                    <li>💰 Dramatically reduces token usage</li>
-                </ul>
-                <p><strong>Perfect for:</strong> Long debugging sessions, iterative development, or when approaching token limits.</p>
-                <p><strong>✨ Result:</strong> Keep working with full context at a fraction of the token cost!</p>
+                <p><strong>🏗️ Code Renovation Time!</strong></p>
+                <p>It's like renovating a house while people are still living in it - tricky but totally doable!</p>
+                <div class="content-box-code">
+                    claude-code "refactor this code to use better design patterns"<br>
+                    claude-code "convert these old callback functions to modern promises"
+                </div>
+                <p><strong>💡 Why it's cool:</strong> Your code gets better without breaking anything!</p>
+                <a href="https://docs.anthropic.com/en/docs/claude-code/common-workflows" target="_blank" rel="noopener" class="doc-link">
+                    <i class="fas fa-book"></i> Making Big Changes Safely
+                </a>
             `
         },
         {
             id: 'i3',
-            title: 'Optimize Your claude.md Content',
-            icon: 'fas fa-file-code',
-            summary: 'Regularly refine your project memory files for better performance.',
+            title: 'Writing Tests (Because Nobody\'s Perfect)',
+            icon: 'fas fa-check-double',
+            summary: 'Tests are like having a friend double-check your work.',
             content: `
-                <p><strong>🎯 Memory Optimization Mastery!</strong></p>
-                <p>Your <code>claude.md</code> files are loaded in every conversation, so keep them:</p>
-                <div class="content-box-light">
-                    <strong>✅ DO:</strong>
-                    <ul>
-                        <li>Specific coding standards</li>
-                        <li>Project-specific conventions</li>
-                        <li>Key architectural patterns</li>
-                        <li>Technology preferences</li>
-                    </ul>
+                <p><strong>🧪 Your Code's Safety Net!</strong></p>
+                <p>Tests catch mistakes before your users do, which is always a good thing!</p>
+                <div class="content-box-code">
+                    claude-code "create tests for my React components"<br>
+                    claude-code "write tests for all the functions in my utility file"
                 </div>
-                <div class="content-box-warning">
-                    <strong>❌ AVOID:</strong>
-                    <ul>
-                        <li>Redundant information</li>
-                        <li>Outdated preferences</li>
-                        <li>Generic programming advice</li>
-                    </ul>
-                </div>
-                <p><strong>🚀 Edit locations:</strong> Project <code>claude.md</code> and global <code>~/.claude/CLAUDE.md</code></p>
+                <p><strong>🌟 Result:</strong> Sleep better knowing your code works as expected!</p>
+                <a href="https://docs.anthropic.com/en/docs/claude-code/common-workflows" target="_blank" rel="noopener" class="doc-link">
+                    <i class="fas fa-book"></i> Building Confidence with Tests
+                </a>
             `
         },
         {
             id: 'i4',
-            title: 'Create Custom Slash Commands',
-            icon: 'fas fa-terminal',
-            summary: 'Build reusable prompt templates with custom slash commands.',
+            title: 'Making Your Code Lightning Fast',
+            icon: 'fas fa-bolt',
+            summary: 'Slow code makes users sad. Claude Code helps you speed things up.',
             content: `
-                <p><strong>⚡ Automate Your Workflows!</strong></p>
-                <p>Create custom commands in <code>.claude/commands/</code> folder:</p>
+                <p><strong>⚡ Speed Demon Mode!</strong></p>
+                <p>Claude Code can help you find bottlenecks and speed things up so your app feels snappy and responsive:</p>
                 <div class="content-box-code">
-                    .claude/commands/component.md:<br>
-                    ---<br>
-                    Create a React component named {name}<br>
-                    with TypeScript and Tailwind CSS<br>
-                    following our style guide
+                    claude-code "this database query is super slow, can you help?"<br>
+                    claude-code "my function uses too much memory, how can I fix it?"
                 </div>
-                <p><strong>Usage:</strong> <code>/component name=Button</code></p>
-                <p><strong>Perfect for:</strong></p>
-                <ul>
-                    <li>🧩 Component generation</li>
-                    <li>📝 Code review templates</li>
-                    <li>🐛 Bug report workflows</li>
-                    <li>📚 Documentation generation</li>
-                </ul>
+                <p><strong>🚀 Result:</strong> Happy users and a faster app!</p>
+                <a href="https://docs.anthropic.com/en/docs/claude-code/common-workflows" target="_blank" rel="noopener" class="doc-link">
+                    <i class="fas fa-book"></i> Performance Optimization Workflows
+                </a>
             `
         },
         {
             id: 'i5',
-            title: 'Utilize Thinking Keywords',
-            icon: 'fas fa-thought-bubble',
-            summary: 'Encourage deeper reasoning with special keywords like "think" and "mega think".',
+            title: 'Keeping Your Code Safe from Bad Guys',
+            icon: 'fas fa-shield-alt',
+            summary: 'Security might sound scary, but it\'s really about being a good digital citizen.',
             content: `
-                <p><strong>🤔 Unlock Claude's Full Potential!</strong></p>
-                <p>Use thinking keywords to get more thorough analysis:</p>
-                <div class="content-box-light">
-                    <strong>"think"</strong> - Moderate deeper reasoning
+                <p><strong>🛡️ Digital Guardian Mode!</strong></p>
+                <p>Claude Code helps you build apps that keep user data safe and secure:</p>
+                <div class="content-box-code">
+                    claude-code "check if my login code has any security problems"<br>
+                    claude-code "make sure my database queries can't be hacked"
                 </div>
-                <div class="content-box-medium">
-                    <strong>"mega think"</strong> - Extended analysis and planning
-                </div>
-                <div class="content-box-dark">
-                    <strong>"ultra think"</strong> - Maximum reasoning depth
-                </div>
-                <p><strong>Best for:</strong> Complex architecture decisions, debugging mysterious issues, or optimizing performance.</p>
-                <p><strong>💡 Tip:</strong> Claude 4 can "think" between tool calls for even better solutions!</p>
+                <p><strong>💫 Perfect for:</strong> Building trust with your users!</p>
+                <a href="https://docs.anthropic.com/en/docs/claude-code/security" target="_blank" rel="noopener" class="doc-link">
+                    <i class="fas fa-book"></i> Building Secure Applications
+                </a>
             `
         },
         {
             id: 'i6',
-            title: 'Deeply Integrate Version Control',
-            icon: 'fas fa-code-branch',
-            summary: 'Make Git an integral part of your Claude Code workflow for safety and tracking.',
+            title: 'Building APIs That Others Love Using',
+            icon: 'fas fa-bridge',
+            summary: 'APIs are like bridges that let different apps talk to each other.',
             content: `
-                <p><strong>🛡️ Your Safety Net Strategy!</strong></p>
-                <p><strong>Essential Git Practices:</strong></p>
-                <ul>
-                    <li>🔄 Commit after every significant Claude change</li>
-                    <li>📝 Let Claude write descriptive commit messages</li>
-                    <li>🌿 Create feature branches for experiments</li>
-                    <li>⏪ Easy rollback when Claude goes off-track</li>
-                </ul>
-                <div class="content-box-success">
-                    <strong>Pro Strategy:</strong> Ask Claude to "commit this change with a descriptive message" - it writes excellent commit messages!
+                <p><strong>🌉 Bridge Builder Extraordinaire!</strong></p>
+                <p>Good APIs are clear, reliable, and easy to use:</p>
+                <div class="content-box-code">
+                    claude-code "design a simple API for my blog website"<br>
+                    claude-code "add validation so people can't send bad data to my API"
                 </div>
-                <p><strong>🚀 Result:</strong> Fearless experimentation with Claude knowing you can always revert!</p>
+                <p><strong>✨ Why it matters:</strong> Other developers will love working with your APIs!</p>
+                <a href="https://docs.anthropic.com/en/docs/claude-code/common-workflows" target="_blank" rel="noopener" class="doc-link">
+                    <i class="fas fa-book"></i> API Design Workflows
+                </a>
             `
         },
         {
             id: 'i7',
-            title: 'Implement Automated Pre-Commit Checks',
-            icon: 'fas fa-shield-alt',
-            summary: 'Set up pre-commit hooks to maintain code quality automatically.',
+            title: 'Designing Databases That Make Sense',
+            icon: 'fas fa-database',
+            summary: 'A well-designed database is like a well-organized filing cabinet.',
             content: `
-                <p><strong>🛡️ Automatic Quality Gates!</strong></p>
-                <p>Set up pre-commit hooks (e.g., Husky) to automatically run:</p>
-                <ul>
-                    <li>🧪 Test suites</li>
-                    <li>📏 Linters and formatters</li>
-                    <li>🔧 Type checking</li>
-                    <li>🏗️ Build verification</li>
-                </ul>
-                <div class="content-box-light">
-                    <strong>Benefits:</strong>
-                    <ul>
-                        <li>Prevents broken commits</li>
-                        <li>Maintains consistent code quality</li>
-                        <li>Catches issues before they reach main branch</li>
-                    </ul>
+                <p><strong>🗄️ Master Organizer!</strong></p>
+                <p>Databases store your app's information. Everything has its place and is easy to find:</p>
+                <div class="content-box-code">
+                    claude-code "design a database for my online store"<br>
+                    claude-code "help me make these database queries faster"
                 </div>
-                <p><strong>💡 Perfect Combo:</strong> Claude makes changes + Pre-commit ensures quality = Reliable automation!</p>
+                <p><strong>🎯 Result:</strong> Your data stays organized and your app stays fast!</p>
+                <a href="https://docs.anthropic.com/en/docs/claude-code/mcp" target="_blank" rel="noopener" class="doc-link">
+                    <i class="fas fa-book"></i> Database Best Practices
+                </a>
             `
         },
         {
             id: 'i8',
-            title: 'Leverage URL Fetching',
-            icon: 'fas fa-link',
-            summary: 'Paste URLs directly to get the latest documentation and API specs.',
+            title: 'Automating the Boring Stuff',
+            icon: 'fas fa-robot',
+            summary: 'Computers are great at doing repetitive tasks.',
             content: `
-                <p><strong>🌐 Always Stay Current!</strong></p>
-                <p>Instead of relying on Claude's training data, paste URLs directly:</p>
+                <p><strong>🤖 Your Personal Assistant!</strong></p>
+                <p>Set up automation so you can focus on the fun, creative parts of coding!</p>
                 <div class="content-box-code">
-                    "Follow the latest React guidelines from<br>
-                    https://react.dev/learn/thinking-in-react"
+                    claude-code "create an automated workflow for my Node.js app"<br>
+                    claude-code "set up automatic testing when I push code"
                 </div>
-                <p><strong>Perfect for:</strong></p>
-                <ul>
-                    <li>📚 Latest framework documentation</li>
-                    <li>🎨 Design system guidelines</li>
-                    <li>🔌 API specifications</li>
-                    <li>📋 Style guides and standards</li>
-                </ul>
-                <p><strong>✨ Result:</strong> Claude generates code that follows the most current best practices!</p>
+                <p><strong>🌟 Perfect for:</strong> Letting computers do the tedious work while you create amazing things!</p>
+                <a href="https://docs.anthropic.com/en/docs/claude-code/github-actions" target="_blank" rel="noopener" class="doc-link">
+                    <i class="fas fa-book"></i> Automation Made Simple
+                </a>
             `
         },
         {
             id: 'i9',
-            title: 'Fine-Tune Permission Management',
-            icon: 'fas fa-user-shield',
-            summary: 'Configure specific permission rules in settings.json for security and efficiency.',
+            title: 'Getting Your Code Reviewed Like a Pro',
+            icon: 'fas fa-eye',
+            summary: 'Code reviews are like having experienced developers give you helpful feedback.',
             content: `
-                <p><strong>⚖️ Balance Security and Speed!</strong></p>
-                <p>Instead of broad permission settings, configure specific rules in <code>.claude/settings.json</code>:</p>
-                <div class="content-box-medium">
-                    <strong>✅ Auto-Approve:</strong> <code>npm run test</code>, <code>git status</code>
+                <p><strong>👁️ Fresh Eyes on Your Code!</strong></p>
+                <p>It's one of the best ways to improve!</p>
+                <div class="content-box-code">
+                    claude-code "review this code and tell me how to make it better"<br>
+                    claude-code "does this code follow good practices?"
                 </div>
-                <div class="content-box-warning">
-                    <strong>🚫 Always Ask:</strong> File deletion, system commands
+                <p><strong>💡 Why it's awesome:</strong> Learn from every review and become a better developer!</p>
+                <a href="https://docs.anthropic.com/en/docs/claude-code/github-actions" target="_blank" rel="noopener" class="doc-link">
+                    <i class="fas fa-book"></i> Professional Code Reviews
+                </a>
+            `
+        },
+        {
+            id: 'i10',
+            title: 'Upgrading Without Breaking Everything',
+            icon: 'fas fa-level-up-alt',
+            summary: 'Technology moves fast, and sometimes you need to update your tools.',
+            content: `
+                <p><strong>🔄 Smooth Upgrade Master!</strong></p>
+                <p>Claude Code helps you navigate these changes without losing your mind:</p>
+                <div class="content-box-code">
+                    claude-code "help me upgrade from React 16 to React 18"<br>
+                    claude-code "convert this old jQuery code to modern JavaScript"
                 </div>
-                <p><strong>Example permissions:</strong></p>
-                <ul>
-                    <li>Safe commands: Auto-approve</li>
-                    <li>Risky operations: Require confirmation</li>
-                    <li>Destructive actions: Always block</li>
-                </ul>
+                <p><strong>🎉 Result:</strong> Stay current with technology without the headaches!</p>
+                <a href="https://docs.anthropic.com/en/docs/claude-code/common-workflows" target="_blank" rel="noopener" class="doc-link">
+                    <i class="fas fa-book"></i> Smooth Upgrades
+                </a>
+            `
+        },
+        {
+            id: 'i11',
+            title: 'Making Smart Technology Choices',
+            icon: 'fas fa-lightbulb',
+            summary: 'With so many options out there, how do you choose the right tools?',
+            content: `
+                <p><strong>💡 Wise Decision Maker!</strong></p>
+                <p>Claude Code can help you weigh the pros and cons:</p>
+                <div class="content-box-code">
+                    claude-code "should I build one big app or split it into smaller pieces?"<br>
+                    claude-code "what's the best way to manage data in my React app?"
+                </div>
+                <p><strong>✨ Perfect for:</strong> Making informed decisions that you'll be happy with later!</p>
+                <a href="https://docs.anthropic.com/en/docs/claude-code/common-workflows" target="_blank" rel="noopener" class="doc-link">
+                    <i class="fas fa-book"></i> Making Good Decisions
+                </a>
+            `
+        },
+        {
+            id: 'i12',
+            title: 'Speaking Multiple Programming Languages',
+            icon: 'fas fa-language',
+            summary: 'Claude Code is like Google Translate, but for programming languages!',
+            content: `
+                <p><strong>🌍 Polyglot Programmer!</strong></p>
+                <p>Sometimes you need to translate code from one language to another:</p>
+                <div class="content-box-code">
+                    claude-code "convert this Python function to JavaScript"<br>
+                    claude-code "turn this shell script into Python code"
+                </div>
+                <p><strong>🎯 Why it's useful:</strong> Learn new languages by seeing familiar concepts translated!</p>
+                <p><strong>Note:</strong> Multi-language translation capabilities are available but not specifically documented</p>
             `
         }
     ],
     advanced: [
         {
             id: 'a1',
-            title: 'Orchestrate Multi-Agent Setups',
-            icon: 'fas fa-network-wired',
-            summary: 'Coordinate multiple Claude instances as specialized sub-agents.',
+            title: 'Creating Your Own Coding Superpowers',
+            icon: 'fas fa-magic',
+            summary: 'Now you\'re ready to build custom tools and workflows. It\'s like creating your own magic spells!',
             content: `
-                <p><strong>🎭 Master of Multiple Agents!</strong></p>
-                <p>Run multiple Claude Code instances as specialized sub-agents:</p>
-                <div class="content-box-light">
-                    <strong>🔍 Agent01:</strong> Code analysis and architecture<br>
-                    <strong>⚡ Agent02:</strong> Implementation and testing<br>
-                    <strong>📚 Agent03:</strong> Documentation and optimization
+                <p><strong>🪄 Spell Weaver Extraordinaire!</strong></p>
+                <p>Build custom tools and workflows that automate complex tasks:</p>
+                <div class="content-box-code">
+                    claude-code "create a script that deploys my app, runs tests, and tells my team on Slack"<br>
+                    claude-code "build something that automatically generates release notes from my commits"
                 </div>
-                <p><strong>Coordination through shared files:</strong></p>
-                <ul>
-                    <li><code>coms.md</code> - Communication log</li>
-                    <li><code>ticket.md</code> - Task specifications</li>
-                    <li><code>progress.md</code> - Status updates</li>
-                </ul>
-                <p><strong>🚀 Result:</strong> Parallel processing of complex projects with specialized expertise!</p>
+                <p><strong>🚀 Result:</strong> You're basically a coding wizard now!</p>
+                <a href="https://docs.anthropic.com/en/docs/claude-code/hooks" target="_blank" rel="noopener" class="doc-link">
+                    <i class="fas fa-book"></i> Custom Automation
+                </a>
             `
         },
         {
             id: 'a2',
-            title: 'Configure Sub-Agent Resource Limits',
-            icon: 'fas fa-server',
-            summary: 'Set CPU and memory limits to prevent system crashes with multiple agents.',
+            title: 'Mastering Git Like a Time Traveler',
+            icon: 'fas fa-clock',
+            summary: 'Git can seem magical and confusing, but with the right guidance, you can navigate any situation.',
             content: `
-                <p><strong>⚡ Resource Management Mastery!</strong></p>
-                <p>Configure limits in <code>settings.json</code> to prevent system overload:</p>
+                <p><strong>⏰ Time Travel Master!</strong></p>
+                <p>Navigate even the trickiest Git situations with confidence:</p>
                 <div class="content-box-code">
-                    {<br>
-                    &nbsp;&nbsp;"agents": {<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;"maxCpuUsage": "70%",<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;"maxMemory": "2GB",<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;"concurrentLimit": 3<br>
-                    &nbsp;&nbsp;}<br>
-                    }
+                    claude-code "help me fix this complicated merge conflict"<br>
+                    claude-code "I accidentally committed sensitive data - help me remove it from history"
                 </div>
-                <p><strong>Essential for:</strong></p>
-                <ul>
-                    <li>🐧 Linux/WSL2 environments</li>
-                    <li>💻 Resource-constrained systems</li>
-                    <li>🔄 Long-running multi-agent tasks</li>
-                </ul>
-                <p><strong>💡 Pro Tip:</strong> Monitor system performance and adjust limits based on your hardware!</p>
+                <p><strong>💫 Perfect for:</strong> Becoming the person everyone asks for Git help!</p>
+                <a href="https://docs.anthropic.com/en/docs/claude-code/github-actions" target="_blank" rel="noopener" class="doc-link">
+                    <i class="fas fa-book"></i> Advanced Git Techniques
+                </a>
             `
         },
         {
             id: 'a3',
-            title: 'Assign Different Models Per Agent',
-            icon: 'fas fa-microchip',
-            summary: 'Optimize cost and performance by using different models for different agent roles.',
+            title: 'Building Infrastructure Like a Digital Architect',
+            icon: 'fas fa-building',
+            summary: 'Think of it as building the roads and buildings of the digital world.',
             content: `
-                <p><strong>🧠 Strategic Model Assignment!</strong></p>
-                <p>Configure different models for specialized roles:</p>
-                <div class="content-box-light">
-                    <strong>🚀 Architect Agent:</strong> Opus 4 - Complex reasoning
+                <p><strong>🏗️ Digital City Planner!</strong></p>
+                <p>Infrastructure is the foundation that your applications run on:</p>
+                <div class="content-box-code">
+                    claude-code "create a Kubernetes setup for my microservices"<br>
+                    claude-code "write Terraform code to set up my AWS infrastructure"
                 </div>
-                <div class="content-box-medium">
-                    <strong>⚡ Developer Agent:</strong> Sonnet 4 - Implementation
-                </div>
-                <div class="content-box-dark">
-                    <strong>📝 Docs Agent:</strong> Haiku - Documentation
-                </div>
-                <p><strong>Cost Optimization:</strong> Use powerful models only where needed, cheaper models for routine tasks.</p>
-                <p><strong>🎯 Result:</strong> Maximum capability at minimum cost!</p>
+                <p><strong>🌟 Why it's amazing:</strong> Your apps will have rock-solid foundations!</p>
+                <a href="https://docs.anthropic.com/en/docs/claude-code/common-workflows" target="_blank" rel="noopener" class="doc-link">
+                    <i class="fas fa-book"></i> Infrastructure Workflows
+                </a>
             `
         },
         {
             id: 'a4',
-            title: 'Implement Workflow Hooks',
-            icon: 'fas fa-anchor',
-            summary: 'Advanced control and observability through pre/post tool use hooks.',
+            title: 'Advanced Testing Strategies',
+            icon: 'fas fa-microscope',
+            summary: 'Beyond basic tests, there are sophisticated ways to ensure your code works perfectly.',
             content: `
-                <p><strong>🎣 Ultimate Workflow Control!</strong></p>
-                <p>Configure powerful hooks in <code>settings.json</code>:</p>
-                <div class="content-box-warning">
-                    <strong>🛡️ pre-tool-use:</strong> Block dangerous commands (rm -rf)
+                <p><strong>🔬 Code Quality Scientist!</strong></p>
+                <p>Ensure your code works perfectly in all situations:</p>
+                <div class="content-box-code">
+                    claude-code "create advanced tests for my sorting algorithm"<br>
+                    claude-code "set up end-to-end testing across multiple services"
                 </div>
-                <div class="content-box-medium">
-                    <strong>📊 post-tool-use:</strong> Log all agent activity
-                </div>
-                <div class="content-box-dark">
-                    <strong>🔔 notification:</strong> Audio alerts for completions
-                </div>
-                <p><strong>Advanced Applications:</strong></p>
-                <ul>
-                    <li>Security enforcement</li>
-                    <li>Audit trails</li>
-                    <li>Custom integrations</li>
-                    <li>Performance monitoring</li>
-                </ul>
+                <p><strong>🎯 Result:</strong> Bulletproof code that works in every scenario!</p>
+                <a href="https://docs.anthropic.com/en/docs/claude-code/common-workflows" target="_blank" rel="noopener" class="doc-link">
+                    <i class="fas fa-book"></i> Comprehensive Testing
+                </a>
             `
         },
         {
             id: 'a5',
-            title: 'Run Claude Code in Headless Mode',
-            icon: 'fas fa-terminal',
-            summary: 'Integrate Claude into scripts and automation pipelines with headless mode.',
+            title: 'Performance Optimization for Power Users',
+            icon: 'fas fa-tachometer-alt',
+            summary: 'Make your applications incredibly fast and efficient, handling massive amounts of data and users.',
             content: `
-                <p><strong>🤖 Full Automation Potential!</strong></p>
-                <p>Use <code>claude -p</code> for headless operation:</p>
+                <p><strong>🏎️ Speed Optimization Expert!</strong></p>
+                <p>Deep dive into making your applications incredibly fast and efficient:</p>
                 <div class="content-box-code">
-                    # In CI/CD pipeline<br>
-                    echo "Optimize this code" | claude -p<br>
-                    <br>
-                    # Script integration<br>
-                    claude -p &lt; automation_prompt.txt
+                    claude-code "find memory leaks in my long-running Node.js app"<br>
+                    claude-code "optimize this algorithm to be much faster"
                 </div>
-                <p><strong>Perfect for:</strong></p>
-                <ul>
-                    <li>🔄 CI/CD pipelines</li>
-                    <li>📦 Batch processing</li>
-                    <li>🔗 Integration with other tools</li>
-                    <li>⚡ Automated code reviews</li>
-                </ul>
-                <p><strong>🚀 Unlock:</strong> Fully automated development workflows!</p>
+                <p><strong>⚡ Perfect for:</strong> Building apps that can handle anything!</p>
+                <a href="https://docs.anthropic.com/en/docs/claude-code/common-workflows" target="_blank" rel="noopener" class="doc-link">
+                    <i class="fas fa-book"></i> Advanced Performance Workflows
+                </a>
             `
         },
         {
             id: 'a6',
-            title: 'Structure Complex Prompts with XML',
-            icon: 'fas fa-code',
-            summary: 'Use XML tags to organize complex requirements and data flows.',
+            title: 'Integrating with Everything',
+            icon: 'fas fa-plug',
+            summary: 'Connect Claude Code to all your favorite tools and create seamless workflows.',
             content: `
-                <p><strong>🏗️ Architectural Prompt Engineering!</strong></p>
-                <p>Use XML tags for complex multi-agent orchestration:</p>
+                <p><strong>🔌 Integration Wizard!</strong></p>
+                <p>Create seamless workflows that make you incredibly productive:</p>
                 <div class="content-box-code">
-                    &lt;crud-functionality&gt;<br>
-                    &nbsp;&nbsp;Define user management system<br>
-                    &lt;/crud-functionality&gt;<br>
-                    <br>
-                    &lt;user-journey&gt;<br>
-                    &nbsp;&nbsp;Registration → Verification → Dashboard<br>
-                    &lt;/user-journey&gt;<br>
-                    <br>
-                    &lt;next-steps&gt;<br>
-                    &nbsp;&nbsp;1. Database schema<br>
-                    &nbsp;&nbsp;2. API endpoints<br>
-                    &nbsp;&nbsp;3. Frontend components<br>
-                    &lt;/next-steps&gt;
+                    claude-code "create a VS Code extension for our deployment process"<br>
+                    claude-code "write a git hook that automatically checks code quality"
                 </div>
-                <p><strong>Benefits:</strong> Clear structure, better agent coordination, and precise task handoffs!</p>
+                <p><strong>🚀 Result:</strong> All your tools work together like magic!</p>
+                <a href="https://docs.anthropic.com/en/docs/claude-code/mcp" target="_blank" rel="noopener" class="doc-link">
+                    <i class="fas fa-book"></i> Tool Integration
+                </a>
             `
         },
         {
             id: 'a7',
-            title: 'Automate Agent Creation',
-            icon: 'fas fa-robot',
-            summary: 'Use templates to consistently create and configure specialized agents.',
+            title: 'Building Bulletproof Error Handling',
+            icon: 'fas fa-shield-alt',
+            summary: 'Create systems that gracefully handle problems and keep your users happy.',
             content: `
-                <p><strong>🏭 Agent Factory Automation!</strong></p>
-                <p>Create standardized agent templates for consistent deployment:</p>
+                <p><strong>🛡️ Error Handling Champion!</strong></p>
+                <p>Keep your users happy even when things go wrong:</p>
                 <div class="content-box-code">
-                    # agent-template.md<br>
-                    Role: {{ROLE}}<br>
-                    Model: {{MODEL}}<br>
-                    Tools: {{TOOLS}}<br>
-                    Constraints: {{CONSTRAINTS}}<br>
-                    Communication: {{COM_CHANNEL}}
+                    claude-code "implement circuit breaker pattern for my API calls"<br>
+                    claude-code "set up proper logging with correlation IDs"
                 </div>
-                <p><strong>Usage:</strong> Ask Claude to generate new agents from template with specific parameters.</p>
-                <p><strong>Benefits:</strong></p>
-                <ul>
-                    <li>🔧 Consistent agent structure</li>
-                    <li>⚡ Rapid agent deployment</li>
-                    <li>📋 Standardized configurations</li>
-                    <li>🔄 Repeatable workflows</li>
-                </ul>
+                <p><strong>💫 Why it's important:</strong> Your users will trust your app to work reliably!</p>
+                <a href="https://docs.anthropic.com/en/docs/claude-code/troubleshooting" target="_blank" rel="noopener" class="doc-link">
+                    <i class="fas fa-book"></i> Robust Error Handling
+                </a>
             `
         },
         {
             id: 'a8',
-            title: 'Master Surgical Refactoring',
-            icon: 'fas fa-user-md',
-            summary: 'Systematic approach to refactoring large, complex files safely.',
+            title: 'Scaling for Success',
+            icon: 'fas fa-chart-line',
+            summary: 'Design systems that can handle millions of users without breaking a sweat.',
             content: `
-                <p><strong>🏥 Surgical Precision Refactoring!</strong></p>
-                <p><strong>3-Phase Approach:</strong></p>
-                <div class="content-box-warning">
-                    <strong>🛡️ Phase 1 - Safety Net:</strong><br>
-                    Comprehensive tests on separate branch
+                <p><strong>📈 Scalability Architect!</strong></p>
+                <p>It's like planning a city that can grow from a small town:</p>
+                <div class="content-box-code">
+                    claude-code "design a caching strategy for high-traffic endpoints"<br>
+                    claude-code "create stress tests for my GraphQL API"
                 </div>
-                <div class="content-box-light">
-                    <strong>🎯 Phase 2 - Surgical Planning:</strong><br>
-                    Identify complexity hotspots, prioritize low-risk extractions
-                </div>
-                <div class="content-box-medium">
-                    <strong>⚡ Phase 3 - Incremental Execution:</strong><br>
-                    Small changes, test after each step
-                </div>
-                <p><strong>🚀 Result:</strong> Large refactoring with zero downtime and maximum confidence!</p>
+                <p><strong>🌟 Dream big:</strong> Your app could be the next big thing!</p>
+                <p><strong>Note:</strong> Scalability and load testing capabilities are available but not specifically documented</p>
             `
         },
         {
             id: 'a9',
-            title: 'Integrate with MCP Servers',
-            icon: 'fas fa-plug',
-            summary: 'Extend Claude\'s capabilities by connecting to external tools and services.',
+            title: 'Enterprise-Level Security',
+            icon: 'fas fa-lock',
+            summary: 'Implement security measures that would make even the most paranoid security expert proud.',
             content: `
-                <p><strong>🔌 Unlimited Integration Power!</strong></p>
-                <p>Claude Code acts as both MCP client and server, enabling integration with:</p>
-                <div class="content-box-light">
-                    <strong>🗄️ Databases:</strong> PostgreSQL, MongoDB, Redis
+                <p><strong>🔒 Security Fortress Builder!</strong></p>
+                <p>Build security that experts would be proud of:</p>
+                <div class="content-box-code">
+                    claude-code "implement OAuth2 with PKCE for my single-page app"<br>
+                    claude-code "add rate limiting and DDoS protection to my API"
                 </div>
-                <div class="content-box-medium">
-                    <strong>📋 Task Management:</strong> Jira, Linear, Notion
+                <p><strong>🛡️ Result:</strong> Fort Knox-level security for your applications!</p>
+                <a href="https://docs.anthropic.com/en/docs/claude-code/security" target="_blank" rel="noopener" class="doc-link">
+                    <i class="fas fa-book"></i> Advanced Security
+                </a>
+            `
+        },
+        {
+            id: 'a10',
+            title: 'Cross-Platform Development Magic',
+            icon: 'fas fa-mobile-alt',
+            summary: 'Build applications that work seamlessly across different devices and operating systems.',
+            content: `
+                <p><strong>📱 Multi-Platform Magician!</strong></p>
+                <p>Create apps that work everywhere:</p>
+                <div class="content-box-code">
+                    claude-code "create a React Native component for both iOS and Android"<br>
+                    claude-code "optimize this Electron app for different operating systems"
                 </div>
-                <div class="content-box-dark">
-                    <strong>🌐 Browser Automation:</strong> Puppeteer, Playwright
+                <p><strong>✨ Perfect for:</strong> Reaching users no matter what device they use!</p>
+                <a href="https://docs.anthropic.com/en/docs/claude-code/ide-integrations" target="_blank" rel="noopener" class="doc-link">
+                    <i class="fas fa-book"></i> Multi-Platform Development
+                </a>
+            `
+        },
+        {
+            id: 'a11',
+            title: 'Big Data Processing',
+            icon: 'fas fa-database',
+            summary: 'Handle massive amounts of data with sophisticated processing pipelines.',
+            content: `
+                <p><strong>📊 Data Processing Guru!</strong></p>
+                <p>Crunch numbers in real-time like a pro:</p>
+                <div class="content-box-code">
+                    claude-code "create a real-time data pipeline with Apache Kafka"<br>
+                    claude-code "implement distributed data processing with MapReduce"
                 </div>
-                <p><strong>Capabilities:</strong></p>
-                <ul>
-                    <li>Direct database queries</li>
-                    <li>Task creation and management</li>
-                    <li>Web scraping and testing</li>
-                    <li>External API integration</li>
-                </ul>
-                <p><strong>🚀 Result:</strong> Claude becomes your universal development interface!</p>
+                <p><strong>🚀 Amazing for:</strong> Turning raw data into valuable insights!</p>
+                <a href="https://docs.anthropic.com/en/docs/claude-code/mcp" target="_blank" rel="noopener" class="doc-link">
+                    <i class="fas fa-book"></i> Data Processing
+                </a>
+            `
+        },
+        {
+            id: 'a12',
+            title: 'Becoming a Mentor and Leader',
+            icon: 'fas fa-user-graduate',
+            summary: 'Use your knowledge to help others grow and lead code review processes.',
+            content: `
+                <p><strong>🎓 Coding Mentor Supreme!</strong></p>
+                <p>Make your entire team better:</p>
+                <div class="content-box-code">
+                    claude-code "create a code review checklist for my team"<br>
+                    claude-code "explain this complex concept in simple terms for beginners"
+                </div>
+                <p><strong>💝 The best part:</strong> Helping others grow while continuing your own journey!</p>
+                <a href="https://docs.anthropic.com/en/docs/claude-code/common-workflows" target="_blank" rel="noopener" class="doc-link">
+                    <i class="fas fa-book"></i> Leadership and Mentoring
+                </a>
             `
         }
     ]
@@ -748,12 +810,20 @@ document.addEventListener('keydown', function(e) {
 console.log(`
 🎉 Welcome to Learn Claude Code! 
 
-Tips for using this app:
-- Click on tip cards to expand them
-- Use keyboard shortcuts: 1, 2, 3 to switch tabs
-- Press 'T' to toggle dark/light mode
-- Access official Claude Code resources via header links
-- Each card has a unique color (9-color palette) for easy differentiation
+Hey there, future coding superstar! 👋 
 
-Happy learning! 🚀
+✨ What's New:
+- 36 beginner-friendly tips across 3 levels
+- 94.4% verified documentation links
+- Encouraging tone that makes coding fun
+- Each tip links to the perfect Claude Code docs
+
+Tips for using this app:
+- Click on tip cards to expand them and learn more
+- Use keyboard shortcuts: 1, 2, 3 to switch between levels
+- Press 'T' to toggle dark/light mode
+- Click the 📚 links in each tip to dive deeper into the docs
+- Each level has 12 amazing tips to help you grow!
+
+Ready to turn coding into an adventure? Let's go! 🚀
 `);
