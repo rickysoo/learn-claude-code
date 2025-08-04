@@ -652,6 +652,11 @@ const tipsData = {
 // Application State
 let currentLevel = 'beginner';
 let currentTheme = 'dark'; // Start in dark mode
+let soundEnabled = true; // Sound effects enabled by default
+
+// Audio Context for Web Audio API
+let audioContext;
+let isAudioInitialized = false;
 
 // DOM Elements
 const tabs = document.querySelectorAll('.tab');
@@ -671,6 +676,7 @@ function initializeApp() {
     // Set initial theme
     document.body.setAttribute('data-theme', currentTheme);
     updateThemeIcon();
+    updateSoundIcon();
 }
 
 function setupTabListeners() {
@@ -683,7 +689,13 @@ function setupTabListeners() {
 }
 
 function showLevel(level) {
+    const previousLevel = currentLevel;
     currentLevel = level;
+    
+    // Play level transition sound if switching levels
+    if (previousLevel !== level && soundEnabled && isAudioInitialized) {
+        playLevelTransitionSound(level);
+    }
     
     // Update tab states
     tabs.forEach(tab => {
@@ -765,12 +777,27 @@ function toggleTipContent(tipId) {
     const content = document.getElementById(`content-${tipId}`);
     const btnText = document.getElementById(`btn-text-${tipId}`);
     
+    // Initialize audio on first user interaction
+    if (!isAudioInitialized) {
+        initializeAudio();
+    }
+    
+    // Determine the level based on tipId prefix
+    let level = 'beginner';
+    if (tipId.startsWith('i')) {
+        level = 'intermediate';
+    } else if (tipId.startsWith('a')) {
+        level = 'advanced';
+    }
+    
     if (content.classList.contains('expanded')) {
         content.classList.remove('expanded');
         btnText.textContent = 'Learn More';
+        playCollapseSound(level); // Level-specific descending notes
     } else {
         content.classList.add('expanded');
         btnText.textContent = 'Show Less';
+        playExpandSound(level); // Level-specific ascending chord
     }
 }
 
@@ -789,6 +816,148 @@ function updateThemeIcon() {
     }
 }
 
+// Audio Functions for Pleasant UI Sounds
+function initializeAudio() {
+    if (!isAudioInitialized && soundEnabled) {
+        try {
+            audioContext = new (window.AudioContext || window.webkitAudioContext)();
+            isAudioInitialized = true;
+        } catch (error) {
+            console.log('Web Audio API not supported');
+            soundEnabled = false;
+        }
+    }
+}
+
+function playNote(frequency, duration = 0.2, type = 'sine') {
+    if (!soundEnabled || !isAudioInitialized) return;
+    
+    try {
+        // Create oscillator for the tone
+        const oscillator = audioContext.createOscillator();
+        const gainNode = audioContext.createGain();
+        
+        // Connect nodes
+        oscillator.connect(gainNode);
+        gainNode.connect(audioContext.destination);
+        
+        // Configure the sound
+        oscillator.type = type;
+        oscillator.frequency.setValueAtTime(frequency, audioContext.currentTime);
+        
+        // Create a pleasant envelope (fade in/out)
+        gainNode.gain.setValueAtTime(0, audioContext.currentTime);
+        gainNode.gain.linearRampToValueAtTime(0.1, audioContext.currentTime + 0.01);
+        gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + duration);
+        
+        // Play the note
+        oscillator.start(audioContext.currentTime);
+        oscillator.stop(audioContext.currentTime + duration);
+        
+    } catch (error) {
+        console.log('Error playing sound:', error);
+    }
+}
+
+function playExpandSound(level = 'beginner') {
+    if (!soundEnabled) return;
+    
+    switch(level) {
+        case 'beginner':
+            // Gentle, encouraging C Major chord: C4 → E4 → G4 (bright and welcoming)
+            playNote(261.63, 0.15, 'sine'); // C4
+            setTimeout(() => playNote(329.63, 0.15, 'sine'), 50); // E4
+            setTimeout(() => playNote(392.00, 0.2, 'sine'), 100); // G4
+            break;
+            
+        case 'intermediate':
+            // Confident F Major chord: F4 → A4 → C5 (more sophisticated)
+            playNote(349.23, 0.15, 'sine'); // F4
+            setTimeout(() => playNote(440.00, 0.15, 'sine'), 50); // A4
+            setTimeout(() => playNote(523.25, 0.2, 'sine'), 100); // C5
+            break;
+            
+        case 'advanced':
+            // Triumphant G Major chord: G4 → B4 → D5 (powerful and accomplished)
+            playNote(392.00, 0.15, 'triangle'); // G4 (triangle wave for richer sound)
+            setTimeout(() => playNote(493.88, 0.15, 'triangle'), 50); // B4
+            setTimeout(() => playNote(587.33, 0.2, 'triangle'), 100); // D5
+            break;
+    }
+}
+
+function playCollapseSound(level = 'beginner') {
+    if (!soundEnabled) return;
+    
+    switch(level) {
+        case 'beginner':
+            // Gentle descending: G4 → E4 → C4 (soft and reassuring)
+            playNote(392.00, 0.15, 'sine'); // G4
+            setTimeout(() => playNote(329.63, 0.15, 'sine'), 50); // E4
+            setTimeout(() => playNote(261.63, 0.2, 'sine'), 100); // C4
+            break;
+            
+        case 'intermediate':
+            // Confident descending: C5 → A4 → F4 (smooth transition)
+            playNote(523.25, 0.15, 'sine'); // C5
+            setTimeout(() => playNote(440.00, 0.15, 'sine'), 50); // A4
+            setTimeout(() => playNote(349.23, 0.2, 'sine'), 100); // F4
+            break;
+            
+        case 'advanced':
+            // Majestic descending: D5 → B4 → G4 (rich and satisfying)
+            playNote(587.33, 0.15, 'triangle'); // D5
+            setTimeout(() => playNote(493.88, 0.15, 'triangle'), 50); // B4
+            setTimeout(() => playNote(392.00, 0.2, 'triangle'), 100); // G4
+            break;
+    }
+}
+
+function playLevelTransitionSound(level) {
+    if (!soundEnabled) return;
+    
+    switch(level) {
+        case 'beginner':
+            // Welcome sound: Single bright C5 note
+            playNote(523.25, 0.4, 'sine');
+            break;
+            
+        case 'intermediate':
+            // Progress sound: F5 → A5 (confident interval)
+            playNote(698.46, 0.25, 'sine'); // F5
+            setTimeout(() => playNote(880.00, 0.3, 'sine'), 150); // A5
+            break;
+            
+        case 'advanced':
+            // Achievement sound: G5 → B5 → D6 (triumphant ascending)
+            playNote(783.99, 0.2, 'triangle'); // G5
+            setTimeout(() => playNote(987.77, 0.2, 'triangle'), 100); // B5
+            setTimeout(() => playNote(1174.66, 0.3, 'triangle'), 200); // D6
+            break;
+    }
+}
+
+function toggleSound() {
+    soundEnabled = !soundEnabled;
+    if (soundEnabled && !isAudioInitialized) {
+        initializeAudio();
+    }
+    
+    // Play a confirmation sound
+    if (soundEnabled) {
+        setTimeout(() => playNote(523.25, 0.3, 'sine'), 100); // High C5 for "sound on"
+    }
+    
+    updateSoundIcon();
+}
+
+function updateSoundIcon() {
+    const soundIcon = document.getElementById('soundIcon');
+    if (soundIcon) {
+        soundIcon.className = soundEnabled ? 'fas fa-volume-up' : 'fas fa-volume-mute';
+    }
+}
+
 // Keyboard shortcuts
 document.addEventListener('keydown', function(e) {
     // Tab switching with number keys
@@ -803,6 +972,11 @@ document.addEventListener('keydown', function(e) {
     // Theme toggle with 't' key
     if (e.key.toLowerCase() === 't') {
         toggleTheme();
+    }
+    
+    // Sound toggle with 's' key
+    if (e.key.toLowerCase() === 's') {
+        toggleSound();
     }
 });
 
@@ -820,8 +994,12 @@ Hey there, future coding superstar! 👋
 
 Tips for using this app:
 - Click on tip cards to expand them and learn more
+- Listen for level-specific musical themes! 🎵
+  • Beginner: Gentle C Major chords (welcoming & encouraging)
+  • Intermediate: Confident F Major chords (sophisticated)  
+  • Advanced: Triumphant G Major chords (accomplished & rich)
 - Use keyboard shortcuts: 1, 2, 3 to switch between levels
-- Press 'T' to toggle dark/light mode
+- Press 'T' to toggle dark/light mode, 'S' to toggle sound
 - Click the 📚 links in each tip to dive deeper into the docs
 - Each level has 12 amazing tips to help you grow!
 
