@@ -720,18 +720,40 @@ body {
     }
     
     .controls {
-        position: relative;
-        top: auto;
-        right: auto;
-        float: right;
-        margin: 10px 20px 0 0;
+        position: absolute;
+        top: 20px;
+        right: 20px;
         flex-direction: row;
-        gap: 10px;
+        gap: 8px;
+        z-index: 999;
     }
     
+    /* Make controls smaller on mobile */
     .theme-toggle,
     .sound-toggle {
-        position: static;
+        width: 36px;
+        height: 36px;
+        padding: 0.3rem;
+        background: rgba(0, 0, 0, 0.7);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+    
+    .theme-toggle i,
+    .sound-toggle i {
+        font-size: 0.9rem;
+        padding: 0.25rem;
+        color: white;
+    }
+    
+    .theme-toggle:hover,
+    .sound-toggle:hover {
+        background: var(--primary-color);
+        border-color: var(--primary-color);
+    }
+    
+    /* Add more top padding to hero to accommodate controls */
+    .hero {
+        padding-top: 4rem;
     }
     
     .footer-links {
@@ -765,6 +787,32 @@ body {
     
     .level-intro h2 {
         font-size: 2rem;
+    }
+    
+    /* Even smaller controls on very small screens */
+    .controls {
+        top: 15px;
+        right: 15px;
+        gap: 6px;
+    }
+    
+    .theme-toggle,
+    .sound-toggle {
+        width: 32px;
+        height: 32px;
+        padding: 0.25rem;
+        background: rgba(0, 0, 0, 0.8);
+    }
+    
+    .theme-toggle i,
+    .sound-toggle i {
+        font-size: 0.8rem;
+        padding: 0.15rem;
+        color: white;
+    }
+    
+    .hero {
+        padding-top: 3.5rem;
     }
     
     .footer-links {
