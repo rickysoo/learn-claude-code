@@ -594,6 +594,7 @@ body {
     font-size: 0.9rem;
     transition: all 0.3s ease;
     box-shadow: var(--shadow-light);
+    position: relative;
 }
 
 .doc-link:hover {
@@ -602,8 +603,23 @@ body {
     box-shadow: var(--shadow-medium);
 }
 
-.doc-link i {
+.doc-link i.fa-book {
     font-size: 0.8rem;
+}
+
+/* External link indicator */
+.doc-link::after {
+    content: '\f35d'; /* FontAwesome external-link-alt icon */
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    font-size: 0.7rem;
+    margin-left: 0.3rem;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.doc-link:hover::after {
+    opacity: 1;
 }
 
 /* Footer */
@@ -664,6 +680,21 @@ body {
     color: white;
     transform: translateY(-2px);
     box-shadow: var(--shadow-medium);
+}
+
+/* External link indicator for footer links */
+.footer-link::after {
+    content: '\f35d'; /* FontAwesome external-link-alt icon */
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    font-size: 0.6rem;
+    margin-left: 0.5rem;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+.footer-link:hover::after {
+    opacity: 1;
 }
 
 .footer-link i {
